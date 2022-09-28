@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+        #header {
+            width: 40%;
+            margin-left: 12%;
+            border: 0px solid red;
+            margin-bottom: 25px;
+        }
+
+        #header > h1 {
+            font-size: 39px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(60, 64, 67);
+        }
+
+        #header > p {
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(82, 86, 91);
+            margin-top: -20px;
+            font-weight: 550;
+        }
+
+        #content {
+            width: 60%;
+            margin: auto;
+            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
+            padding: 40px 0px 12px 30px;
+            /* padding-bottom: 12px; */
+        }
+
+        #content > button {
+            width: 29%;
+            margin-bottom: 35px;
+            background-color: white;
+            border: 0px solid black;
+            border-radius: 2px;
+            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
+            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
+            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
+
+            height: 42px;
+            font-size: 14px;
+            color: rgb(117, 117, 117);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500; 
+        }
+
+        #content > button:hover {
+            cursor: pointer;
+        }
+
+        #content > button > div {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5px 0px 5px 0px;
+
+        }
+
+        #content > button > div > img {
+            width: 8%;
+            padding: 3px 0px;
+            /* height: 18px; */
+            /* margin: 2px 0px 0px 0px; */
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            /* box-sizing: border-box;
+            line-height: 15px; */
+        }
+
+        form > label {
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(38, 41, 44);
+            font-weight: 550;
+        }
+
+        .signUpContent {
+            background: white;
+            border: none;
+            border-bottom: 1.8px solid #cecbcb;
+            width: 70%;
+            outline: none;
+
+        }
+
+        input[type = "password"] {
+            margin-top: 15px;
+        }
+
+        .signUpContent:hover {
+            border-bottom: 2px solid black;
+            transition-delay: 0.1s;
+        }
+
+        form + div {
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+            margin: 25px 0px 30px 0px;
+            border: 0px solid blue;
+        }
+
+        form + div > p {
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            color: #3f7ee8;
+            font-weight: 500;
+
+        }
+
+        form + div > p:hover {
+           color: rgb(23, 78, 166);
+           cursor: pointer;
+        }
+
+        form + div > button {
+            background-color: #1a73e8;
+            color: white;
+            border: 0px;
+            margin-top: 7.5px;
+            width: 105px;
+            height: 45px;
+            padding: 5px 0px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 2px;
+            font-family: 'Poppins', sans-serif;
+        } 
+
+        form + div > button:hover {
+            background-color: rgb(23, 78, 166);
+            cursor: pointer;
+        }
+
+        #content > p {
+            color: rgb(117, 117, 117);
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #bottom {
+            width: 60%;
+            margin: auto;
+            box-shadow: 0px 1.5px 2px 1px rgba(184,184,184,1);
+            padding: 6px 0px 18px 30px;
+        }
+
+        #bottom > p {
+            font-size: 14px;
+            color: rgb(117, 117, 117);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Sign in</h1>
+        <p>Access your online courses and track your progress</p>
+    </div>
+    
+    <div id="content">
+        <button><div><img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt=""><span>Sign in with Google</span></div></button>
+        
+        <form action="">
+            <label for="email">Or continue with email</label>
+            <input type="email" placeholder="Email" class="signUpContent" id="email">
+            <input type="password" placeholder="Password" class="signUpContent" id="pass">
+        </form>
+
+        <div>
+            <p>Forgotten password?</p>
+            <button onclick="doSignIn()">Sign in</button>
+        </div>
+
+        <p>By signing in I agree to the Google Terms of Service and Privacy Policy</p>
+    </div>
+
+    <div id="bottom">
+        <p>Need an account?<a href="signup.html"> Sign up here.</a></p>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    let signInForm = document.querySelector("form");
+
+    // let signInData = {
+    //     email : signInForm.email.value,
+    //     pass : signInForm.pass.value,
+    //     }
+
+        //console.log(signInData.email)
+
+        
+        
+    let userData = JSON.parse(localStorage.getItem("userInLS")) || [];
+
+    //...........Sign-in functionality here...........
+      
+    function doSignIn() {
+
+        event.preventDefault();
+
+          let signInSucess = false;
+
+          //console.log(signInForm.email.value)
+
+          //check for user data matching here
+          userData.forEach(function (el) {
+            if(el.email == signInForm.email.value && el.pass == signInForm.pass.value) {
+                signInSucess = true;
+                window.location.href = "https://twitter.com/winwithvibhor";
+                return;
+            }
+          })
+
+          //if data dont match?
+          if(!signInSucess) {
+            alert("Please enter correct credentials!");
+          }
+
+          signInForm.email.value = "";
+          signInForm.pass.value = "";
+
+    }
+</script>
+

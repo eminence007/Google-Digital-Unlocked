@@ -5,6 +5,150 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register here</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+       
+        #header {
+            width: 40%;
+            margin-left: 12%;
+            border: 0px solid red;
+            margin-bottom: 25px;
+        }
+
+        #header > h1 {
+            font-size: 39px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(60, 64, 67);
+        }
+        #header > p {
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(82, 86, 91);
+            margin-top: -20px;
+            font-weight: 550;
+        }
+
+        #content {
+            width: 60%;
+            margin: auto;
+            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
+            padding: 40px 0px 25px 30px;
+            padding-bottom: 12px;
+        }
+
+        #content > button {
+            width: 33%;
+            margin-bottom: 35px;
+            background-color: white;
+            border: 0px solid black;
+            border-radius: 2px;
+            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
+            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
+            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
+
+            height: 45px;
+            font-size: 16px;
+            color: rgb(117, 117, 117);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500; 
+        }
+
+        #content > button:hover {
+            cursor: pointer;
+        }
+
+        #content > button > div {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5px 0px 5px 0px;
+
+        }
+
+        #content > button > div > img {
+            width: 6.5%;
+            padding: 4px 0px;
+            /* height: 18px; */
+            /* margin: 2px 0px 0px 0px; */
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            /* box-sizing: border-box;
+            line-height: 15px; */
+        }
+
+        form > label {
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(38, 41, 44);
+            font-weight: 550;
+        }
+
+        .signUpContent {
+            background: white;
+            border: none;
+            border-bottom: 1.8px solid #cecbcb;
+            width: 70%;
+            outline: none;
+
+        }
+
+        input[type = "password"] {
+            margin-top: 15px;
+        }
+
+        .signUpContent:hover {
+            border-bottom: 2px solid black;
+            transition-delay: 0.2s;
+        }
+
+        form > p {
+            color: rgb(117, 117, 117);
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            margin-top: -25px;
+        }
+
+        #bottom {
+            display: flex;
+            width: 62.5%;
+            margin: auto;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        #bottom > p {
+            font-size: 14px;
+            color: rgb(117, 117, 117);
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        #bottom > button {
+            background-color: #1a73e8;
+            color: white;
+            border: 0px;
+            width: 120px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 2px;
+            font-family: 'Poppins', sans-serif;
+        } 
+
+        #bottom > button:hover {
+            background-color: rgb(23, 78, 166);
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -14,18 +158,120 @@
     </div>
 
     <div id="content">
-        <button>Register with Google</button>
+        <button><div><img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt=""><span>Register with Google</span></div></button>
         <form action="">
             <label for="email">Or continue with email</label>
-            <input type="email" placeholder="Email" class="signUpContent">
-            <input type="password" placeholder="******" class="signUpContent">
+            <input type="email" placeholder="Email" class="signUpContent" id="email">
+            <input type="password" placeholder="email@example.com *" class="signUpContent" id="pass">
             <p>Use 6 or more characters with a mix of letters, numbers & symbols</p>
 
         </form>
+    </div>
 
-        <button>Continue</button>
-        <p>Already have an account?<a href="#"> Sign in</a></p>
+    <div id="bottom">
+        <p>Already have an account?<a href="sign-in.html"> Sign in.</a></p>
+        <button onclick="getSignUpData()">Continue</button>
     </div>
     
 </body>
 </html>
+
+<script>
+    let signUpForm = document.querySelector("form");
+
+    let userData = JSON.parse(localStorage.getItem("userInLS")) || [];
+
+
+
+    function getSignUpData() {
+        //localStorage.clear()
+
+        let userExistinLS = false;
+
+        //check if user already exists or not
+        userData.forEach(function (el) {
+            if(el.email == signUpForm.email.value) {
+                alert("This email is taken, just like your Crush. Please choose another!");
+                userExistinLS = true;
+                return;
+            }
+        })
+
+        //if user doesn't exist, then signUpData is set in LS
+        if(!userExistinLS) {
+            let userDetails = {
+            email : signUpForm.email.value,
+            pass : signUpForm.pass.value,
+        }
+            //console.log(userDetails);
+
+            //check for a strong password, "Though it is not needed here but doing it for added functionality"
+            if(!checkStrongPass(userDetails.pass)) {
+                document.querySelector("form > p").style.color = "red";
+                document.querySelector("form > p").style.fontSize = "18px";
+                document.querySelector("form > p").innerText = "Use 6 or more characters with a mix of letters, numbers & symbols(~!@#$%^&*)"
+                signUpForm.pass.value = "";
+                signUpForm.email.value = "";
+                signUpForm.pass.style.borderColor = "red";
+                signUpForm.pass.style.height = "25px";
+                return;
+            }
+
+
+            userData.push(userDetails);
+            localStorage.setItem("userInLS", JSON.stringify(userData));
+            //console.log(userData)
+
+            //take user to sign-in page
+            window.location.href = "sign-in.html";
+        }
+        
+        // To check strong password - 
+        function checkStrongPass(str) {
+            let caps = "QWERTYUIOPLKJHGFDSAZXCVBNM";
+            let noCaps = "qwertyuioplkjhgfdsazxcvbnm";
+            let symbol = "~!@#$%^&*";
+            let digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+            //convert above strings to arrays to use #includes
+            caps = caps.split("");
+            //console.log(caps);
+            noCaps = noCaps.split("");
+            symbol = symbol.split("");
+
+            let c = 0;
+            let n = 0;
+            let s = 0;
+            let d = 0;
+            for(let i = 0; i < str.length; i++) {
+                if(caps.includes(str[i])) {
+                    c = 1;
+                    console.log(str[i]);
+                }
+
+                if(noCaps.includes(str[i])) {
+                    n = 1;
+                    console.log(str[i]);
+                }
+
+                if(symbol.includes(str[i])) {
+                    s = 1;
+                    console.log(str[i]);
+                }
+
+                if(digits.includes(+str[i])) {
+                    d = 1;
+                    console.log(str[i]);
+                }
+
+            }
+
+            if(c==1 && n==1 && s==1 && d==1 && str.length >= 6) {
+                return true;
+            }
+           
+        }
+
+    }
+
+</script>
