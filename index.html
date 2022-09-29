@@ -4,174 +4,267 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-in</title>
+    <title>Learn Digital With Google</title>
     <script src="https://kit.fontawesome.com/939ba8c56b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="bottomBar.css" />
+    <link rel="stylesheet" href="bottom-bar.css" />
     <link rel="stylesheet" href="fonts.css" />
 
     <style>
 
-        #header {
-            width: 40%;
-            margin-left: 12%;
-            border: 0px solid red;
-            margin-bottom: 25px;
+        #top-container {
+            width: 75%;
+            display: flex;
+            margin: auto;
+            border: 0px solid blue;
+            justify-content: space-evenly;
+
         }
 
-        #header > h1 {
-            font-size: 39px;
+        #top-container-L {
+            width: 45%;
+            border: 0px solid red;
+            padding-right: 100px;
+        }
+        #top-container-L > h2 {
+            font-size: 48px;
             font-family: 'Google Sans', sans-serif;
             font-weight: 400;
             color: rgb(60, 64, 67);
         }
 
-        #header > p {
-            font-size: 16px;
-            font-family: 'Poppins', sans-serif;
-            color: rgb(82, 86, 91);
-            margin-top: -20px;
-            font-weight: 550;
+        #top-container-L > h2 + p {
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            line-height: 30px;
+            color: rgb(66, 66, 66);
         }
 
-        #content {
-            width: 60%;
-            margin: auto;
-            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
-            padding: 40px 0px 12px 30px;
-            /* padding-bottom: 12px; */
-        }
-
-        #content > button {
-            width: 29%;
-            margin-bottom: 35px;
-            background-color: white;
-            border: 0px solid black;
-            border-radius: 2px;
-            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
-            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
-            box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
-
-            height: 42px;
-            font-size: 14px;
-            color: rgb(117, 117, 117);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500; 
-        }
-
-        #content > button:hover {
-            cursor: pointer;
-        }
-
-        #content > button > div {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 5px 0px 5px 0px;
-
-        }
-
-        #content > button > div > img {
-            width: 8%;
-            padding: 3px 0px;
-            /* height: 18px; */
-            /* margin: 2px 0px 0px 0px; */
-        }
-
-        form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            /* box-sizing: border-box;
-            line-height: 15px; */
-        }
-
-        form > label {
-            font-size: 20px;
-            font-family: 'Poppins', sans-serif;
-            color: rgb(38, 41, 44);
-            font-weight: 550;
-        }
-
-        .signUpContent {
-            background: white;
-            border: none;
-            border-bottom: 1.8px solid #cecbcb;
-            width: 70%;
-            outline: none;
-
-        }
-
-        input[type = "password"] {
-            margin-top: 15px;
-        }
-
-        .signUpContent:hover {
-            border-bottom: 2px solid black;
-            transition-delay: 0.1s;
-        }
-
-        form + div {
-            display: flex;
-            width: 70%;
-            justify-content: space-between;
-            margin: 25px 0px 30px 0px;
-            border: 0px solid blue;
-        }
-
-        form + div > p {
-            font-size: 16px;
-            font-family: 'Poppins', sans-serif;
-            color: #3f7ee8;
-            font-weight: 500;
-
-        }
-
-        form + div > p:hover {
-           color: rgb(23, 78, 166);
-           cursor: pointer;
-        }
-
-        form + div > button {
+        #top-container-L > button {
             background-color: #1a73e8;
             color: white;
             border: 0px;
-            margin-top: 7.5px;
-            width: 105px;
-            height: 45px;
-            padding: 5px 0px;
+            width: 180px;
+            padding: 11px 10px;
             font-size: 16px;
             font-weight: 500;
             border-radius: 2px;
             font-family: 'Poppins', sans-serif;
-        } 
+            margin-top: 17px;
+        }
 
-        form + div > button:hover {
+        #top-container-L > button:hover {
             background-color: rgb(23, 78, 166);
             cursor: pointer;
         }
 
-        #content > p {
-            color: rgb(117, 117, 117);
-            font-size: 12px;
-            font-family: 'Roboto', sans-serif;
+        #top-container + p {
+            font-size: 14px;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 300;
+            line-height: 26px;
+            color: rgb(66, 66, 66);
+            margin-left: 155px;
+            margin-top: 90px;
         }
 
-        #bottom {
+        #top-container-R {
+            width: 47%;
+            border: 0px solid red;
+            margin-left: 30px;
+            padding-top: 50px;
+        }
+
+        #top-container-R > img {
+            width: 100%;
+        }
+
+        #top-container + p + h2 {
+            color: rgb(60, 64, 67);
+            font-family: 'Google Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #top-container + p + h2 + p {
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            line-height: 32px;
+            color: rgb(66, 66, 66);
+            text-align: center;
             width: 60%;
             margin: auto;
-            box-shadow: 0px 1.5px 2px 1px rgba(184,184,184,1);
-            padding: 6px 0px 18px 30px;
         }
 
-        #bottom > p {
-            font-size: 14px;
-            color: rgb(117, 117, 117);
-            font-family: 'Poppins', sans-serif;
+        #courses {
+            width: 75%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            border: 0px solid blue;
+            margin-top: 45px;
         }
 
-        a {
+        #courses > div {
+            width: 27.3%;
+            border: 0px solid red;
+            padding: 22.5px;
+            padding-bottom: 25px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            transition: transform .2s;
+            border-radius: 4px;
+        }
+
+        #courses > div:hover {
+            cursor: pointer;
+            transform: scale(1.03);
+        }
+
+        #courses > div > img + p {
+            color: rgb(60, 64, 67);
+            font-family: 'Google Sans', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+
+        #courses > div > p + p {
+            color: rgb(66, 66, 66);
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 23px;
+            font-weight: 300;
+        }
+
+        #courses > div > i {
             color: #1a73e8;
+            font-size: 20px;
+            margin-left: 90%;
+            margin-top: 15px;
+        }
+
+        #courses > div:nth-child(2) > i, #courses > div:nth-child(3) > i {
+            margin-top: 35px;
+        }
+
+        #courses + h2 {
+            color: rgba(0, 0, 0, 0.87);
+            font-family: 'Google Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 145px;
+            margin-bottom: 40px;
+
+        }
+
+        #otherWays {
+            width: 69%;
+            margin: auto;
+            display: flex;
+            border: 0px solid blue;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            transition: transform .2s;
+            border-radius: 4px;
+        }
+
+        #otherWays:hover {
+            cursor: pointer;
+            transform: scale(1.03);
+        }
+
+        #otherWays > img {
+            width: 35%;
+        }
+
+        #otherWays > div {
+            padding: 40px 52px 5px 30px;
+        }
+
+        #otherWays > div > h3 {
+            color: rgb(60, 64, 67);
+            font-family: 'Google Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        #otherWays > div > p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 27px;
+            font-weight: 400;
+            color: rgb(95, 99, 104);
+        }
+
+        #otherWays > div > a {
             text-decoration: none;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a73e8;
+        }
+
+        #otherWays > div > a:hover {
+            color: rgb(23, 78, 166);;
+        }
+
+        #finalHome {
+            width: 100%;
+            background-color: #f8f9fa;
+            margin: auto;
+            border: 0px solid blue;
+            margin-top: 60px;
+            padding-bottom: 10px;
+        }
+
+        #finalHome > div {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            border: 0px solid blue;
+            padding: 40px;
+        }
+
+        #finalHome > div > img {
+            padding: 60px;
+            width: 31%;
+            margin-right: 45px
+        }
+
+        #finalHome > div > div {
+            padding: 10px 28px 10px 10px;
+        }
+        
+        
+        #finalHome > div > div > p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 300;
+            color: rgb(32, 33, 36);
+        }
+
+        #finalHome > div > div > button {
+            border: 2px solid #1a73e8;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a73e8;
+            background-color: #f8f9fa;
+            padding: 12px 25px;
+            border-radius: 2px;
+            margin-top: 10px;
+        }
+
+        #finalHome > div > div > button:hover {
+            background-color: #1a73e8;
+            color: white;
+            cursor: pointer;
         }
 
         /* ......................................................... */
@@ -179,9 +272,8 @@
         /* <!-- This is common for all pages -->  */
         
         #Final-bottom {
-            background-color: #f8f9fa;
             margin-bottom: 50px;
-            margin-top: 70px;
+            margin-top: -50px;
         }
 
         #bottom-1 {
@@ -251,7 +343,10 @@
             cursor: pointer;
         }
 
+        
     </style>
+
+
 </head>
 <body>
 
@@ -292,36 +387,84 @@
         </div>
     </div>
 
-<!-- .................................................................................................................................. -->
-   
 
-    <div id="header">
-        <h1>Sign in</h1>
-        <p>Access your online courses and track your progress</p>
-    </div>
-    
-    <div id="content">
-        <button><div><img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt=""><span>Sign in with Google</span></div></button>
-        
-        <form action="">
-            <label for="email">Or continue with email</label>
-            <input type="email" placeholder="Email" class="signUpContent" id="email">
-            <input type="password" placeholder="Password" class="signUpContent" id="pass">
-        </form>
+    <!-- .........................This is the Home Page............ -->
 
-        <div>
-            <p>Forgotten password?</p>
-            <button onclick="doSignIn()">Sign in</button>
+    <div id="top-container">
+        <div id="top-container-L">
+            <h2>Bring your business online</h2>
+            <p>Grow your business at your own pace, with flexible and personalised training courses designed to help you build your business strategy.</p>
+            <button onclick="findCourse()">Find your course</button>
         </div>
 
-        <p>By signing in I agree to the Google Terms of Service and Privacy Policy</p>
+        <div id="top-container-R">
+             <img src="https://www.tnc-me.com/wp-content/uploads/2020/10/web-development-1.jpg" alt="">
+        </div>
     </div>
 
-    <div id="bottom">
-        <p>Need an account?<a href="signup.html"> Sign up here.</a></p>
+    <!-- ..........................Mid p,h2,p, content................ -->
+
+    <p>We provide courses along with leading institutions and companies</p>
+
+    <h2>Do things that you never thought possible</h2>
+    <p>Discover courses in topics designed to help expand your career, business and horizons and to upgrade your skills for a new digital world.</p>
+
+<!-- .................................................................................................... -->
+
+<!-- ............................courses section............................................ -->
+
+    <div id="courses">
+        <div onclick="clickDigi()">
+            <img src="https://lh3.googleusercontent.com/-0GVWZi0ZL7pLYB8XEJRfDrSC2dI6gT8RvubBrpw2BrIxtHkZY--Jn5FxXC4gp0s0fTJa4aV59o1F29qXNv_HBxcwW7zyyiDSMegNwBOEcgS_KU27Fiw=w64" alt="">
+            <p>Digital marketing</p>
+            <p>Get certified free of charge in our 'Fundamentals of digital marketing' course, or explore other content to help get your business online.</p>
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div onclick="clickCareer()">
+            <img src="https://lh3.googleusercontent.com/yUtRjWMWqcVM2Z0MWD3KX1GCkqO585TTOGlDeu3yOLIqv4Zd_Ywa6Fh-YurdcjqfYS0nZrUGBI8V-24saZac4YOri5yuoApFaxJwJZ2IzWEDaWYMfA=w64" alt="">
+            <p>Career development</p>
+            <p>Gain the skills that you need to advance your career or get a new job.</p>
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div onclick="clickData()">
+            <img src="https://lh3.googleusercontent.com/XyURkvWIqHkfiP5yHRbJOHjUYNfEbVfqP_WoHllMs8n0su4vWyB9iwGca_UaqNRfIRLcPw-smh6Ra5XWl3R9Td-PhQcrK6KwsNiF8w8i2bIz0JcHLeP-=w64" alt="">
+            <p>Data</p>
+            <p>Demand for workers with specialist data skills has more than tripled over the last five years</p>
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
     </div>
 
-    <!-- ...................................................................................................... -->
+<!-- ....................Other ways to learn...................................................     -->
+
+    <h2>Other ways to learn</h2>
+
+    <div onclick="toPrimer()" id="otherWays">
+    
+            <img src="https://lh3.googleusercontent.com/-1X44tBrPMqqgXubTYY1DQopVpNLGvWi3lImsRbBMG4MjYFdSAALCblaMMgEQANvpJyLCV5l1LW-F9R8_1YAbY0shfXfFLqnx4rdq2qTjuV2w0fvzhQ=w600-rw" alt="">
+    
+
+        <div>
+            <h3>Bite-sized lessons to better your business</h3>
+            <p>Google Primer is a free mobile app that offers quick, easy-to-understand lessons to help business owners and individuals grow skills and their goals. Download the app and choose from a variety of topics to find lessons relevant to you or your career.</p>
+            <a href="">Download Now</a>
+        </div>
+    </div>
+
+    <div id="finalHome">
+        <div>
+            <img src="https://lh3.googleusercontent.com/V8mIP2IJKmijuRGlx37xaB5STiR8VJL6cOG2qjwKbcFHD5WlcFyuZEN6ztDD3I2u2VVD0PhV2iC5nXq9Ee3kikC4UxQtPZ5kEEyDjQTaTwK8DnYxnv_i=w680-rw" alt="">
+
+            <div>
+                <p>Small Businesses are the backbone of our economy and communities. Now, more than ever, digital tools can help small businesses to grow stronger and more resilient. To help your business, we have gathered useful tips, trainings, and resources.</p>
+                <button onclick="goExplore()">Explore now</button>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ...................................................................................................... -->
     <!-- This is common for all pages -->
 
     <div id="Final-bottom">
@@ -584,74 +727,57 @@
 
     </div>
 
+    
 </body>
 </html>
 
 <script>
 
-    // All the functionalities of navbar comes here.
+        // All the functionalities of navbar comes here.
 
-    let more = document.querySelector("#nav-left > button > div");
+        let more = document.querySelector("#nav-left > button > div");
 
-    function displayStuff() {
-        more.style.display = "grid";
-    }
+        function displayStuff() {
+            more.style.display = "grid";
+        }
 
-    //navbar sign-up(register) functionality
+        //navbar sign-up(register) functionality
 
-    function openSignUpPage() {
-        window.location.href = "signup.html";
-    }
+        function openSignUpPage() {
+            window.location.href = "signup.html";
+        }
 
-    // Click picture opens Home Page
+        // Click picture opens Home Page
 
-    function takeHome() {
-         window.location.href = "index.html"
-    }
+        function takeHome() {
+            window.location.href = "index.html"
+        }
+ 
+//................................................................................
 
-    //...........................................................................   
+       function findCourse() {
+        window.location.href = "#"
+       }
+
+       function clickDigi() {
+        window.location.href = "#"
+       }
+
+       function clickCareer() {
+        window.location.href = "#"
+       }
+
+       function clickData() {
+        window.location.href = "#"
+       }
+       
+       function toPrimer() {
+        window.open('https://www.yourprimer.com/', '_blank');
+       }
+
+       function goExplore() {
+        window.open("https://grow.google/intl/en_in/", '_blank');
+       }
 
 
-    let signInForm = document.querySelector("form");
-
-    // let signInData = {
-    //     email : signInForm.email.value,
-    //     pass : signInForm.pass.value,
-    //     }
-
-        //console.log(signInData.email)
-
-        
-        
-    let userData = JSON.parse(localStorage.getItem("userInLS")) || [];
-
-    //...........Sign-in functionality here...........
-      
-    function doSignIn() {
-
-        event.preventDefault();
-
-          let signInSucess = false;
-
-          //console.log(signInForm.email.value)
-
-          //check for user data matching here
-          userData.forEach(function (el) {
-            if(el.email == signInForm.email.value && el.pass == signInForm.pass.value) {
-                signInSucess = true;
-                window.location.href = "https://twitter.com/winwithvibhor";
-                return;
-            }
-          })
-
-          //if data dont match?
-          if(!signInSucess) {
-            alert("Please enter correct credentials!");
-          }
-
-          signInForm.email.value = "";
-          signInForm.pass.value = "";
-
-    }
 </script>
-

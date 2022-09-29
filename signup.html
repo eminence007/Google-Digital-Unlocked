@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register here</title>
-
+    <script src="https://kit.fontawesome.com/939ba8c56b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="bottom-bar.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
-       
+     
         #header {
             width: 40%;
             margin-left: 12%;
@@ -19,7 +21,8 @@
 
         #header > h1 {
             font-size: 39px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 400;
             color: rgb(60, 64, 67);
         }
         #header > p {
@@ -106,7 +109,11 @@
             transition-delay: 0.2s;
         }
 
-        form > p {
+        form > div {
+            display: block;
+        }
+
+        form > div > p {
             color: rgb(117, 117, 117);
             font-size: 12px;
             font-family: 'Roboto', sans-serif;
@@ -148,12 +155,14 @@
             cursor: pointer;
         }
 
- /* ......................................................... */
- /* <!-- This is common for all pages -->  */
- 
+        /* ......................................................... */
+        /* Bottom Bar */
+        /* <!-- This is common for all pages -->  */
+        
         #Final-bottom {
             background-color: #f8f9fa;
             margin-bottom: 50px;
+            margin-top: 70px;
         }
 
         #bottom-1 {
@@ -227,7 +236,46 @@
 </head>
 <body>
 
-    <div id="header">
+    <!-- This is Navbar. Common for all pages -->
+
+    <div id="navbar">
+        <div id="nav-left">
+            <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
+            <a class="nav-child" href="#">Online Courses</a>
+            <a class="nav-child" href="#">Certification</a>
+            <button onclick="displayStuff()" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
+                <div>
+                    <!-- <select>
+                        <option value="more" selected><a href="#">More</a></option>
+                        <option value="partners"><a href="#">Partners</a></option>
+                        <option value="remote"><a href="#">Remote Work</a></option>
+                        <option value="mobile"><a href="#">Mobile</a></option>
+                        <option value="faq"><a href="#">Help & FAQs</a></option>
+                        <option value="feedback"><a href="#">Feedback</a></option>
+                        <option value="tools"><a href="#">Tools</a></option>
+    
+                    </select> -->
+
+                    <a href="#">Partners</a>
+                    <a href="#">Remote Work</a>
+                    <a href="#">Mobile</a>
+                    <a href="#">Help & FAQs</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Tools</a>
+
+                </div>
+            </button>
+        </div>
+
+        <div id="nav-right">
+            <a href="sign-in.html">Sign in</a>
+            <button onclick="openSignUpPage()">Register</button>
+        </div>
+    </div>
+
+<!-- .................................................................................................................................. -->
+   
+<div id="header">
         <h1>Create your account</h1>
         <p>Sign up to access Google Digital Unlocked free online courses</p>
     </div>
@@ -238,7 +286,7 @@
             <label for="email">Or continue with email</label>
             <input type="email" placeholder="Email" class="signUpContent" id="email">
             <input type="password" placeholder="email@example.com *" class="signUpContent" id="pass">
-            <p>Use 6 or more characters with a mix of letters, numbers & symbols</p>
+            <div><p>Use 6 or more characters with a mix of letters, numbers & symbols</p></div>
 
         </form>
     </div>
@@ -514,9 +562,38 @@
     
     
 </body>
+<script src="nav.js"></script>
 </html>
 
 <script>
+    //navbar signin-click functionality
+
+    // function openSignInPage() {
+    //     window.location.href = "sign-in.html";
+    // }
+    
+    // All the functionalities of navbar comes here.
+
+    let more = document.querySelector("#nav-left > button > div");
+
+    function displayStuff() {
+        more.style.display = "grid";
+    }
+
+    //navbar sign-up(register) functionality
+
+    function openSignUpPage() {
+        window.location.href = "signup.html";
+    }
+
+    // Click picture opens Home Page
+
+    function takeHome() {
+        window.location.href = "index.html"
+    }
+
+ //...........................................................................   
+
     let signUpForm = document.querySelector("form");
 
     let userData = JSON.parse(localStorage.getItem("userInLS")) || [];
@@ -532,6 +609,7 @@
         userData.forEach(function (el) {
             if(el.email == signUpForm.email.value) {
                 alert("This email is taken, just like your Crush. Please choose another!");
+                signUpForm.email.value = "";
                 userExistinLS = true;
                 return;
             }
@@ -547,9 +625,10 @@
 
             //check for a strong password, "Though it is not needed here but doing it for added functionality"
             if(!checkStrongPass(userDetails.pass)) {
-                document.querySelector("form > p").style.color = "red";
-                document.querySelector("form > p").style.fontSize = "18px";
-                document.querySelector("form > p").innerText = "Use 6 or more characters with a mix of letters, numbers & symbols(~!@#$%^&*)"
+                document.querySelector("form > div").style.display = "block";
+                document.querySelector("form > div > p").style.fontSize = "18px";
+                document.querySelector("form > div > p").style.color = "red";
+                document.querySelector("form > div > p").innerText = "Use 6 or more characters with a mix of letters, numbers & symbols(~!@#$%^&*)"
                 signUpForm.pass.value = "";
                 //signUpForm.email.value = "";
                 signUpForm.pass.style.borderColor = "red";

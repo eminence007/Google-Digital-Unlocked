@@ -1,0 +1,103 @@
+body {
+    width: 100%;
+}
+#navbar {
+    width: 100%;
+    display: flex;
+    height: 60px;
+    border: 0px solid red;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#nav-left {
+    border: 0px solid blue;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    padding: 8px 0px;
+
+}
+
+#nav-left > img {
+    width: 38%;
+    /* margin-left: 20px; */
+}
+
+#nav-left > img:hover {
+    cursor: pointer;
+}
+
+.nav-child {
+    color: rgb(106, 111, 119);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-child:hover {
+    color: rgb(60, 64, 67);
+    cursor: pointer;
+}
+
+#nav-left > button {
+    background-color: white;
+    border: 0px;
+    /* padding-bottom: 10px; */
+}
+
+#nav-left > button > div {
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    border: 1px solid blue;
+    position: absolute;
+    display: none;
+
+}
+
+#nav-right {
+    border: 0px solid blue;
+    width: 17%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+#nav-right > button {
+    background-color: #1a73e8;
+    color: white;
+    border: 0px;
+    width: 120px;
+    padding: 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+    border: 0px solid red;
+    margin-right: 6px;
+}
+
+#nav-right > a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    border: 0px solid black;
+    padding: 13px 5px 10px 5px;
+}
+
+#nav-right > a:hover {
+    color: rgb(23, 78, 166);
+}
+
+#nav-right > button:hover {
+    background-color: rgb(23, 78, 166);
+    cursor: pointer;
+}
+
+
+
