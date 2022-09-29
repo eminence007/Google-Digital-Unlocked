@@ -7,5 +7,9 @@ Day-2(10.25 AM) - Finished the basic layout
 
 Day-2(technically Day-3, 1.12 AM(29/09/2022)) - First Day of code went horribly slow as i made lot mistakes, lot of debugging, lots of styling errors. But i almost finished. One more task left. (bottom)
 
-Day-2(technically Day-3, 2.40 AM(29/09/2022)) - Done with all the tasks. Not able to do a few. Will not not apply them in the project..
+Day-2(technically Day-3, 2.40 AM(29/09/2022)) - Done with all the tasks. Not able to do a few. Will not not apply them in the project.. 
+
+Day-3 - Created Branch for Day-3
+
+Day-3 - Begins
 
