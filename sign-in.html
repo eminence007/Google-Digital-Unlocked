@@ -7,7 +7,7 @@
     <title>Sign-in</title>
     <script src="https://kit.fontawesome.com/939ba8c56b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="bottomBar.css" />
+    <!-- <link rel="stylesheet" href="bottomBar.css" /> -->
     <link rel="stylesheet" href="fonts.css" />
 
     <style>
@@ -216,6 +216,7 @@
             color: rgb(117, 117, 117);
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
+            text-decoration: none;
         }
 
         hr {
@@ -262,7 +263,7 @@
             <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
             <a class="nav-child" href="#">Online Courses</a>
             <a class="nav-child" href="#">Certification</a>
-            <button onclick="displayStuff()" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
+            <button onclick="displayStuff(event)" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div>
                     <!-- <select>
                         <option value="more" selected><a href="#">More</a></option>
@@ -275,12 +276,12 @@
     
                     </select> -->
 
-                    <a href="#">Partners</a>
-                    <a href="#">Remote Work</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Help & FAQs</a>
-                    <a href="#">Feedback</a>
-                    <a href="#">Tools</a>
+                    <a href="https://learndigital.withgoogle.com/digitalunlocked/partners" target="_blank">Partners</a>
+                    <a href="https://learndigital.withgoogle.com/digitalunlocked/remote-work" target="_blank">Remote Work</a>
+                    <a href="https://www.yourprimer.com/" target="_blank">Mobile</a>
+                    <a href="https://learndigital.withgoogle.com/digitalunlocked/faqs" target="_blank">Help & FAQs</a>
+                    <a href="#" target="_blank">Feedback</a>
+                    <a href="https://grow.google/intl/en_in/use-tools/" target="_blank">Tools</a>
 
                 </div>
             </button>
@@ -591,11 +592,24 @@
 
     // All the functionalities of navbar comes here.
 
+    // All the functionalities of navbar comes here.
+
     let more = document.querySelector("#nav-left > button > div");
 
-    function displayStuff() {
+    //Function to display the "more button-content"
+    function displayStuff(event) {
         more.style.display = "grid";
+        event.stopPropagation();
     }
+
+    //Function to hide the "more button-content" after clicking on body.
+    function hideStuff(e) {
+        more.style.display = "none";
+        event.stopPropagation();
+    }
+
+    let body = document;
+    body.addEventListener("click", hideStuff, false);
 
     //navbar sign-up(register) functionality
 
