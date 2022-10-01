@@ -349,6 +349,216 @@
             cursor: pointer;
         }
 
+        /* medium screens */
+
+        @media all and (min-width: 768px) and (max-width: 1024px) {
+            #top-container {
+                width: 90%;
+            }
+
+            #top-container-L {
+                width: 49%;
+                padding-right: 0px;
+            }
+            #top-container-L > h2 {
+                font-size: 37px;
+                font-family: 'Google Sans', sans-serif;
+                font-weight: 400;
+                color: rgb(60, 64, 67);
+            }
+
+            #top-container-L > h2 + p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            #top-container + p {
+                margin-left: 37px;
+            }
+
+            #top-container-R {
+                width: 49%;
+            }
+
+            #courses {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                width: 90%;
+                justify-content: space-evenly;
+            }
+            #courses > div {
+                width: 88%
+            }
+            #finalHome > div {
+                flex-direction: column;
+            }
+            #finalHome > div > img {
+                padding: 0px;
+                width: 40%;
+                margin-right: 45px
+            }
+            #finalHome > div > div {
+            /* padding: 10px 28px 10px 10px; */
+                padding: 0px;
+            }
+
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                border: 0px solid blue;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 30%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+            #bottom-2 {
+                width: 95%;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+    }
+
+
+        /* small screens */
+
+        @media all and (min-width: 380px) and (max-width: 768px) {
+            #top-container {
+                flex-direction: column;
+                width: 98%;
+                margin-top: 20px;
+            }
+            #top-container-L {
+            width: 98%;
+            padding-right: 0px;
+            }
+            #top-container-L > h2 {
+            font-size: 30px;
+            }
+
+            #top-container-L > h2 + p {
+                font-size: 17px;
+                line-height: 23px;
+                margin-top: -10px;
+            }
+
+            #top-container + p {
+                text-align: center;
+                margin: auto;
+            }
+
+            #top-container-R {
+                width: 100%;
+                border: 0px solid red;
+                padding-top: 0px;
+            }
+
+            #top-container-R > img {
+                width: 100%;
+            }
+
+            #courses {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+                width: 98%;
+                justify-content: space-evenly;
+            }
+            #courses > div {
+                width: 95%;
+            }
+
+            #otherWays {
+                flex-direction: column;
+                width: 98%;
+            }
+
+            #otherWays > img {
+            width: 100%;
+            }
+
+            #finalHome > div {
+                flex-direction: column;
+                width: 90%;
+            }
+            #finalHome > div > img {
+            padding: 0px;
+            width: 80%;
+            margin-right: 0px
+            }
+            #finalHome > div > div {
+            /* padding: 10px 28px 10px 10px; */
+            padding: 0px;
+            }
+            
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                border: 0px solid blue;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 50%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            #bottom-1 > div > a {
+                padding-right: 50px;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+
+            #bottom-2 {
+                width: 95%;
+                justify-content: flex-start;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+    
+
+    }
         
     </style>
 
@@ -361,7 +571,7 @@
     <div id="navbar">
         <div id="nav-left">
             <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
-            <a class="nav-child" href="#">Online Courses</a>
+            <a class="nav-child" href="courses.html">Online Courses</a>
             <a class="nav-child" href="#">Certification</a>
             <button onclick="displayStuff(event)" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div>
