@@ -41,14 +41,12 @@
             padding-bottom: 12px;
         }
 
-        #content > button {
+        #content > div > button {
             width: 33%;
             margin-bottom: 35px;
             background-color: white;
             border: 0px solid black;
             border-radius: 2px;
-            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
-            /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
             box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
 
             height: 45px;
@@ -58,18 +56,18 @@
             font-weight: 500; 
         }
 
-        #content > button:hover {
+        #content > div > button:hover {
             cursor: pointer;
         }
 
-        #content > button > div {
+        #content > div > button > div {
             display: flex;
             justify-content: space-evenly;
             padding: 5px 0px 5px 0px;
 
         }
 
-        #content > button > div > img {
+        #content > div > button > div > img {
             width: 6.5%;
             padding: 4px 0px;
             /* height: 18px; */
@@ -232,6 +230,166 @@
         #bottom-2 > img:hover {
             cursor: pointer;
         }
+
+        /* medium screens */
+
+        @media all and (min-width: 768px) and (max-width: 1024px) {
+            #header {
+                width: 60%;
+                margin-left: 6%;
+            }
+            
+            #content {
+                width: 85%;
+            }
+
+            #bottom {
+                display: flex;
+                width: 81%;
+            }
+
+
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                border: 0px solid blue;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 30%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+            #bottom-2 {
+                width: 95%;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+        }
+
+         /* small screens */
+
+         @media all and (min-width: 380px) and (max-width: 768px) {
+
+            #header {
+                width: 70%;
+                margin-left: 4%;
+                margin-top: 40px;
+        }
+
+            #header > h1 {
+                font-size: 28px;
+        }
+            #header > p {
+                margin-top: -10px;
+        }
+
+            #content {
+                width: 86%;
+                margin: auto;
+                box-shadow: 0.5px 1.5px 2px 1px rgba(184,184,184,1);
+                padding: 40px 0px 25px 30px;
+                padding-bottom: 12px;
+        }
+            #content > div {
+                display: flex;
+                justify-content: center;
+            }
+
+            #content > div > button {
+                font-size: 14px;
+            }
+
+            #content > div > button > div > img {
+                width: 11%;
+                padding: 12px 0px;
+        
+        }
+
+            label {
+                text-align: center;
+            }
+
+            #bottom {
+                flex-direction: column-reverse;
+                justify-content: space-evenly;
+                text-align: center;
+                margin-top: 25px;
+                align-items: center;
+            }
+
+            #bottom > p {
+                margin-top: 20px;
+            }
+
+            #bottom > button {
+                padding: 13px 4px;
+            } 
+                
+
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 50%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            #bottom-1 > div > a {
+                padding-right: 50px;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+
+            #bottom-2 {
+                width: 95%;
+                justify-content: flex-start;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+         }
         
     </style>
 </head>
@@ -242,7 +400,7 @@
     <div id="navbar">
         <div id="nav-left">
             <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
-            <a class="nav-child" href="#">Online Courses</a>
+            <a class="nav-child" href="courses.html">Online Courses</a>
             <a class="nav-child" href="#">Certification</a>
             <button onclick="displayStuff(event)" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div>
@@ -282,7 +440,8 @@
     </div>
 
     <div id="content">
-        <button><div><img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt=""><span>Register with Google</span></div></button>
+        <div><button><div><img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt=""><span>Register with Google</span></div></button></div>
+        
         <form action="">
             <label for="email">Or continue with email</label>
             <input type="email" placeholder="Email" class="signUpContent" id="email">

@@ -163,6 +163,13 @@
             color: rgb(128, 134, 139);
             border: 0px solid red;
             padding: 10px 0px;
+            transition: transform .2s;
+        }
+
+        label:hover {
+            color: rgb(0, 0, 0, 0.87);
+            cursor: pointer;
+            transform: scale(1.03);
         }
 
 
@@ -180,6 +187,38 @@
             box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
             transition: transform .2s;
             border-radius: 4px;
+            display: none;
+        }
+
+        .course-contentChild:nth-child(1) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(2) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(3) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(4) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(5) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(6) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(7) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(8) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(9) {
+            display: inline-block
+        }
+        .course-contentChild:nth-child(10) {
+            display: inline-block
         }
 
         .course-contentChild:hover {
@@ -242,6 +281,118 @@
             margin-bottom: 25px;
         }
 
+        #load_more {
+            margin-left: 70%;
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        #load_more > button {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+            background-color: #f1f3f4;
+            border: 0px;
+            padding: 13px 24px;
+        }
+
+        #load_more > button:hover {
+            color: rgb(23, 78, 166);
+            background-color: rgb(232, 234, 237);
+            cursor: pointer;
+        }
+
+        /* medium screens */
+
+        @media all and (min-width: 768px) and (max-width: 1024px) {
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                border: 0px solid blue;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 30%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+            #bottom-2 {
+                width: 95%;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+        }
+
+         /* small screens */
+
+         @media all and (min-width: 380px) and (max-width: 768px) {
+            
+
+            #bottom-1 {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding: 50px 0px 30px 0px;
+                margin-top: 50px;
+                margin-left: 30px;
+            
+            }
+
+            #bottom-1 > img {
+                width: 75%;
+                margin-left: 10px;
+            }
+
+            #bottom-1 > div {
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 50%;
+                border: 0px solid red;
+                justify-content: space-evenly;
+            }
+
+            #bottom-1 > div > a {
+                padding-right: 50px;
+            }
+
+            div > select {
+                width: 100%;
+                margin-top: 25px;
+            }
+
+            #bottom-2 {
+                width: 95%;
+                justify-content: flex-start;
+            }
+
+            #bottom-2 > img {
+                width: 3.5%;
+                padding: 17px;
+            }
+
+         }
+
     </style>
 
 </head>
@@ -252,7 +403,7 @@
     <div id="navbar">
         <div id="nav-left">
             <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
-            <a class="nav-child" href="#">Online Courses</a>
+            <a class="nav-child" href="courses.html">Online Courses</a>
             <a class="nav-child" href="#">Certification</a>
             <button onclick="displayStuff(event)" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div>
@@ -303,7 +454,7 @@
                     <h3>CATEGORIES</h3>
                     <div class="filter-content">
                          <label for="digiMar">
-                            <input type="checkbox" class="bigCheck" id="digiMar">
+                            <input type="checkbox" id="digiMar">
                             Digital Marketing
                          </label>
     
@@ -479,6 +630,7 @@
             <div id="course-content">
                  <div class="course-contentChild">
                     <div>
+                        <!-- <div id="badge"><i class="fa-solid fa-award"></i></div> -->
                         <img src="https://lh3.googleusercontent.com/21Mlc_bfmIP34V4MgJMtr1S9sGbxNGVdj7ncT_jmiQNAhvqJNYwWhnOdKuY2h57SpOuaOk_aF5dAnrz0w4tbDLVy0wxZHJCUQC3y=s333" alt="">
                     </div>
     
@@ -676,16 +828,417 @@
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
                  </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
     
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+
+                 <div class="course-contentChild">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/DbIXNJ6ggUxjEMDBpkVR-TcxiY5I-7thbaXUzz4ye9Vo_tupqFHriwhBjynAW2ZrnoZvC7VWNK7pxzsXbZHP2mMgOd2gMev5tSVytA=s333" alt="">
+                    </div>
+    
+                    <div>
+                        <div>
+                            <h4>Land your next job</h4>
+                            <p>Created by Google</p>
+                            <div>
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Modules: 2</span>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Hours: 1</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                 </div>
+     
+                 <div id="load_more"><button onclick="loadMoreChilds()">Load more</button></div>
+            
             </div>
     
             
         </div>
 
+        
+
     </div>
-
-
-
 
     <!-- ...................................................................................................... -->
     <!-- This is common for all pages -->
@@ -950,7 +1503,6 @@
 
     </div>
 
-    
 </body>
 </html>
 
@@ -986,5 +1538,52 @@
         function takeHome() {
             window.location.href = "index.html"
         }
+
+ //.......................................Content-Child click functionality.......................................
+ 
+        let childs = [...document.querySelectorAll(".course-contentChild")]; //Use "Spread syntax (...)" for an array to select every element for utilisation in a callback function. 
+
+        //console.log(childs)
+
+        childs.forEach(function (el) {
+            //console.log(el);
+            el.addEventListener("click", openChildCourse);
+        })
+
+        function openChildCourse(event) {
+            event.preventDefault();
+            //console.log("I am finally getting clicked!");
+            window.open("index.html", "_blank");
+        }
+
+
+//...............Load More Button functionality.................
+        
+        let loadMoreBtn = document.getElementById("load_more");  //catch the "load more" div here. 
+
+        let currentChild = 10; //11th content box from where new display will start
+
+        //button on-click here....
+        function loadMoreChilds(event) {
+
+            //Declare and initialise the array that will store the content boxes(childs)
+            //let childs = [...document.querySelectorAll(".course-contentChild")];
+            
+            //console.log(childs.length);
+
+
+            for(let i = currentChild; i < currentChild + 2; i++) {
+                childs[i].style.display = "inline-block"; 
+            }
+
+            //increament the value of content boxes that already loaded...
+            currentChild += 2;  //add 4
+
+            //Hide the "load-more Button" when all the content boxes are displayed.
+            if(currentChild >= childs.length) {
+                loadMoreBtn.style.display = "none";
+            }
+        }
+
 
 </script>
