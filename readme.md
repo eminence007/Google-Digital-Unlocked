@@ -16,3 +16,7 @@ Day-3 - Begins
 day-3 - Ends at 2.35 midnight 
 
 day-4 - day-4 tasks
+
+day-5 => Tasks done
+
+da7-6, => Project finished with some more bugs to be fixed

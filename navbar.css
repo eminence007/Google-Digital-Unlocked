@@ -21,7 +21,16 @@ body {
     align-items: center;
 }
 
-#nav-left > img {
+#nav-left > img:nth-child(1) {
+    width: 4%;
+    /* visibility: hidden; */
+    position: absolute;
+    display: none;
+    border: 0px solid blue;
+    margin-left: -225px;
+}
+
+#nav-left > img:nth-child(2) {
     width: 38%;
     /* margin-left: 20px; */
 }
@@ -65,7 +74,7 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-#nav-left > button > div > a {
+.navStuff {
     border: 0px solid blue;
     text-decoration: none;
     padding: 17.5px 0px 17.5px 15px;
@@ -76,7 +85,7 @@ body {
   
 }
 
-#nav-left > button > div > a:hover {
+.navStuff:hover {
     background-color: #f1f3f4;
     color: rgb(27, 29, 31);
     transition-delay: 0.2s;
@@ -84,15 +93,22 @@ body {
 
 #nav-right {
     border: 0px solid blue;
-    width: 17%;
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px 0px;
     text-align: center;
     align-items: center;
 }
 
-#nav-right > button {
+#nav-right > div {
+    display: flex;
+    border: 0px solid red;
+    width: 35%;
+    justify-content: space-between;
+}
+
+#nav-right > div > button {
     background-color: #1a73e8;
     color: white;
     border: 0px;
@@ -106,7 +122,7 @@ body {
     margin-right: 6px;
 }
 
-#nav-right > a {
+#nav-right > div > a {
     color: #1a73e8;
     text-decoration: none;
     font-size: 16px;
@@ -116,14 +132,151 @@ body {
     padding: 13px 5px 10px 5px;
 }
 
-#nav-right > a:hover {
+#nav-right > div > a:hover {
     color: rgb(23, 78, 166);
 }
 
-#nav-right > button:hover {
+#nav-right > div > button:hover {
     background-color: rgb(23, 78, 166);
     cursor: pointer;
 }
 
+#navSLide {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* display: none; */
+    visibility: hidden;
+    border: 0px solid black;
+    width: 275px;
+    height: 550px;
+    /* margin-top: -30px; */
+    margin-left: 0px;
+    /* padding-left: 13px; */
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#navbar > label > div > div:nth-child(1) {
+    display: flex;
+    border-bottom: 1px solid #adadad;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 22px 13px 11px;
+
+}
+
+#navbar > label > div > div > img {
+    width: 95%;
+    border: 0px solid red;
+}
+
+#overFlow {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: auto;
+}
+
+#navSlideBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 0px 30px 0px;
+    align-items: center;
+}
+
+.navReg {
+    background-color: #1a73e8;
+    color: white;
+    border: 0px;
+    width: 85%;
+    margin-top: 10px;
+    padding: 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+    border: 0px solid red;
+}
+
+.navSign {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    border: 0px solid black;
+    padding: 13px 5px 10px 5px;
+    
+}
+
+
+
+
+
+
+/* medium screens */
+
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+
+    #nav-left > img:nth-child(1) {
+        width: 4%;
+        display: block;
+        margin-left: -225px;
+    }
+
+    #nav-left > img:nth-child(2) {
+        width: 45%;
+        margin-left: 60px;
+    }
+
+    .nav-child {
+        display: none;
+    }
+
+    #nav-right > div {
+        display: flex;
+        border: 0px solid red;
+        width: 55%;
+        justify-content: space-around;
+        padding: 0px 0px 0px 40px;
+    }
+
+    
+  }
+
+
+  /* small screens */
+
+@media all and (min-width: 380px) and (max-width: 768px) {
+    
+    #nav-left > img:nth-child(1) {
+        width: 4%;
+        display: block;
+        margin-left: -150px;
+    }
+
+    #nav-left > img:nth-child(2) {
+        width: 70%;
+        margin-left: 175px;
+    }
+
+    .nav-child {
+       display: none;
+    }
+
+    #nav-right > div {
+        display: none;
+    }
+}
+
+@media all and (min-width: 760px) and (max-width: 920px) {
+    #nav-left > img:nth-child(1) {
+        width: 4%;
+        display: block;
+        margin-left: -190px;
+    }
+} 
+    
 
 
