@@ -350,40 +350,54 @@
     <!-- This is Navbar. Common for all pages -->
 
     <div id="navbar">
+        <label>
+            <div id="navSLide">
+                <div><img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt=""></div>
+
+                <div id="overFlow">
+                    <a class="navStuff" href="courses.html">Online Courses</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/course/digital-marketing" target="_blank">Certification</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/partners" target="_blank">Partners</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/remote-work" target="_blank">Remote Work</a>
+                    <a class="navStuff" href="https://www.yourprimer.com/" target="_blank">Mobile</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/faqs" target="_blank">Help & FAQs</a>
+                    <a class="navStuff" href="#" target="_blank">Feedback</a>
+                    <a class="navStuff" href="https://grow.google/intl/en_in/use-tools/" target="_blank">Tools</a>
+                </div>
+                <hr>
+                <div id="navSlideBottom">
+                    <a class="navSign" href="sign-in.html">Sign in</a>
+                    <button class="navReg" onclick="openSignUpPage()">Register</button>
+                </div>
+            </div>
+        </label>
+        
         <div id="nav-left">
+            <img onclick="openSideBar()" src="https://cdn-icons-png.flaticon.com/512/8212/8212733.png" alt="">
             <img onclick="takeHome()" src="https://lh3.googleusercontent.com/jqNezXmR8nPN077WdY_-TteFxdmyQAAVghpthO8zyLPm-xDtTrfG-vpGjPj8d6_L9X4gu2Ym37l4ynHeUfiW9zGYYJGPB1w6cG7WTA=-rw" alt="">
             <a class="nav-child" href="courses.html">Online Courses</a>
-            <a class="nav-child" href="#">Certification</a>
+            <a class="nav-child" href="https://learndigital.withgoogle.com/digitalunlocked/course/digital-marketing" target="_blank">Certification</a>
             <button onclick="displayStuff(event)" class="nav-child">More <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div>
-                    <!-- <select>
-                        <option value="more" selected><a href="#">More</a></option>
-                        <option value="partners"><a href="#">Partners</a></option>
-                        <option value="remote"><a href="#">Remote Work</a></option>
-                        <option value="mobile"><a href="#">Mobile</a></option>
-                        <option value="faq"><a href="#">Help & FAQs</a></option>
-                        <option value="feedback"><a href="#">Feedback</a></option>
-                        <option value="tools"><a href="#">Tools</a></option>
-    
-                    </select> -->
 
-                    <a href="https://learndigital.withgoogle.com/digitalunlocked/partners" target="_blank">Partners</a>
-                    <a href="https://learndigital.withgoogle.com/digitalunlocked/remote-work" target="_blank">Remote Work</a>
-                    <a href="https://www.yourprimer.com/" target="_blank">Mobile</a>
-                    <a href="https://learndigital.withgoogle.com/digitalunlocked/faqs" target="_blank">Help & FAQs</a>
-                    <a href="#" target="_blank">Feedback</a>
-                    <a href="https://grow.google/intl/en_in/use-tools/" target="_blank">Tools</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/partners" target="_blank">Partners</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/remote-work" target="_blank">Remote Work</a>
+                    <a class="navStuff" href="https://www.yourprimer.com/" target="_blank">Mobile</a>
+                    <a class="navStuff" href="https://learndigital.withgoogle.com/digitalunlocked/faqs" target="_blank">Help & FAQs</a>
+                    <a class="navStuff" href="#" target="_blank">Feedback</a>
+                    <a class="navStuff" href="https://grow.google/intl/en_in/use-tools/" target="_blank">Tools</a>
 
                 </div>
             </button>
         </div>
 
         <div id="nav-right">
-            <a href="sign-in.html">Sign in</a>
-            <button onclick="openSignUpPage()">Register</button>
+            <div>
+                <a href="sign-in.html">Sign in</a>
+                <button onclick="openSignUpPage()">Register</button>
+            </div>
         </div>
     </div>
-
 <!-- .................................................................................................................................. -->
    
 
@@ -683,18 +697,16 @@
 
     // All the functionalities of navbar comes here.
 
-    // All the functionalities of navbar comes here.
-
     let more = document.querySelector("#nav-left > button > div");
 
     //Function to display the "more button-content"
-    function displayStuff(event) {
+    function displayStuff() {
         more.style.display = "grid";
         event.stopPropagation();
     }
 
     //Function to hide the "more button-content" after clicking on body.
-    function hideStuff(e) {
+    function hideStuff() {
         more.style.display = "none";
         event.stopPropagation();
     }
@@ -711,9 +723,38 @@
     // Click picture opens Home Page
 
     function takeHome() {
-         window.location.href = "index.html"
+        window.location.href = "index.html"
     }
 
+    // side bar functionality
+
+    function openSideBar() {
+        event.preventDefault();
+        //console.log('fte')
+        let sideBar = document.getElementById("navSLide");
+        let sideBarIcon = document.querySelector("#nav-left > img:nth-child(1)");
+
+        sideBar.style.visibility = "visible"
+        sideBarIcon.style.visibility = "hidden";
+
+        event.stopPropagation();
+    }
+
+    //Function to hide the "side bar" after clicking on body.
+    function hideSidebar() {
+        event.preventDefault();
+        
+        let sideBar = document.getElementById("navSLide");
+        let sideBarIcon = document.querySelector("#nav-left > img:nth-child(1)");
+
+        sideBar.style.visibility = "hidden";
+        sideBarIcon.style.visibility = "visible";
+
+        event.stopPropagation();
+    }
+
+    let bodys = document;
+    bodys.addEventListener("click", hideSidebar, false);
     //...........................................................................   
 
 
@@ -744,7 +785,7 @@
           userData.forEach(function (el) {
             if(el.email == signInForm.email.value && el.pass == signInForm.pass.value) {
                 signInSucess = true;
-                window.location.href = "https://twitter.com/winwithvibhor";
+                window.location.href = "courses.html";
                 return;
             }
           })
