@@ -19,4 +19,6 @@ day-4 - day-4 tasks
 
 day-5 => Tasks done
 
-da7-6, => Project finished with some more bugs to be fixed
+day-6, => Project finished with some more bugs to be fixed
+
+Day - 7 => Some bug fixing

@@ -753,8 +753,8 @@
         event.stopPropagation();
     }
 
-    let bodys = document;
-    bodys.addEventListener("click", hideSidebar, false);
+    //let bodys = document;
+    body.addEventListener("click", hideSidebar, false);
     //...........................................................................   
 
 
@@ -785,6 +785,7 @@
           userData.forEach(function (el) {
             if(el.email == signInForm.email.value && el.pass == signInForm.pass.value) {
                 signInSucess = true;
+                alert("Login successful!")
                 window.location.href = "courses.html";
                 return;
             }
