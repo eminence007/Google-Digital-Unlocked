@@ -1,24 +1,30 @@
-This is safe-hat-14, day-1
-Day-1 has ended and i am roughly done with the planning of the project. Its going to be a nice ride and i am going to document it here. Enjoy!
+## Google Digital Unlocked (Ed-Tech Portal)
+#### This is the clone of Google Digital Unlocked which is a google initiative to provide free courses.
+Deployed Link -> https://digital-unlocked.vercel.app/
+#### Tech stack used in the Project:
+1. HTML
+2. CSS
+3. JavaScript
 
-Day-2 (28/09/2022,10.00 AM) - This is day-2 and beginning to start to code at 10 AM(IST). Fist task is to create a layout for the #1-SignUp Page(Register).
 
-Day-2(10.25 AM) - Finished the basic layout
+### Some Snippets of the Project
 
-Day-2(technically Day-3, 1.12 AM(29/09/2022)) - First Day of code went horribly slow as i made lot mistakes, lot of debugging, lots of styling errors. But i almost finished. One more task left. (bottom)
+# 1.Landing Page ⤵️
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/110287987/209822428-463b19ec-6ae8-4125-a42d-9f7ef4ef1200.png">
 
-Day-2(technically Day-3, 2.40 AM(29/09/2022)) - Done with all the tasks. Not able to do a few. Will not not apply them in the project.. 
+# 2.Courses Page ⤵️
+<img width="948" alt="image" src="https://user-images.githubusercontent.com/110287987/209822646-4d462e6e-cae5-4d1b-a55b-e8f4f6aa00d8.png">
 
-Day-3 - Created Branch for Day-3
+# 3.Sign Up Page ⤵️
+<img width="945" alt="image" src="https://user-images.githubusercontent.com/110287987/209822749-222a48d7-21e8-48d5-b63a-836138df737b.png">
 
-Day-3 - Begins
+# 4.Sign In Page ⤵️
+<img width="945" alt="image" src="https://user-images.githubusercontent.com/110287987/209822825-f85b5e95-e99d-485c-8fe6-2bb32af6f392.png">
 
-day-3 - Ends at 2.35 midnight 
 
-day-4 - day-4 tasks
 
-day-5 => Tasks done
 
-day-6, => Project finished with some more bugs to be fixed
 
-Day - 7 => Some bug fixing
+
+
+
